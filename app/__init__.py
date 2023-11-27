@@ -11,15 +11,12 @@ def create_app():
     app.config['SECRET_KEY'] = 'SECRET_KEY'
     app.config['SQLALCHEMY_DATABASE_URI'] = conn
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    db.init_app(app)  
-    
+    db.init_app(app)    
+    #app.register_blueprint(dashboard_blueprint, url_prefix='/dashboard')
+
     @app.route("/")
     def home():
         return render_template("home.html")
-
-    @app.route("/dashboard")
-    def dashboard():
-        return render_template("test.html")
 
     @app.errorhandler(404)  
     def page_not_found(e):
