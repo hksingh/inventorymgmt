@@ -17,6 +17,14 @@ def create_app():
     @app.route("/")
     def home():
         return render_template("home.html")
+        
+    @app.route("/home")
+    def home2():
+        return render_template("home.html")
+
+    @app.route("/test")
+    def test():
+        return render_template("test.html")
 
     @app.errorhandler(404)  
     def page_not_found(e):
