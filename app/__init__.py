@@ -24,6 +24,7 @@ def create_app():
 
     @app.route("/test")
     def test():
+        print('test')
         return render_template("test.html")
 
     @app.errorhandler(404)  
